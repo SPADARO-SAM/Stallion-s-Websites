@@ -363,26 +363,26 @@
           <div class="form-row">
             <div class="form-group">
               <label>Your Name</label>
-              <input type="text" placeholder="John Smith" required />
+              <input type="text" name="name" placeholder="John Smith" required />
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="email" placeholder="john@example.com" required />
+              <input type="email" name="email" placeholder="john@example.com" required />
             </div>
           </div>
           <div class="form-group">
             <label>Package Interest</label>
-            <select>
+            <select name="package">
               <option value="">Select a tier...</option>
-              <option value="basic">Tier 1 — Basic</option>
-              <option value="standard">Tier 2 — Standard</option>
-              <option value="custom">Tier 3 — Custom</option>
-              <option value="unsure">Not sure yet</option>
+              <option value="Tier 1 — Basic">Tier 1 — Basic</option>
+              <option value="Tier 2 — Standard">Tier 2 — Standard</option>
+              <option value="Tier 3 — Custom">Tier 3 — Custom</option>
+              <option value="Not sure yet">Not sure yet</option>
             </select>
           </div>
           <div class="form-group">
             <label>Tell Me About Your Project</label>
-            <textarea placeholder="What kind of site do you need? What's the goal? Any design ideas?" rows="5" required></textarea>
+            <textarea name="message" placeholder="What kind of site do you need? What's the goal? Any design ideas?" rows="5" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-full">Send Message →</button>
         </form>

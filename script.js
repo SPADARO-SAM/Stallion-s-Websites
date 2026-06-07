@@ -183,19 +183,40 @@ reveals.forEach(el => revealObserver.observe(el));
    ============================================ */
 document.getElementById('contact-form').addEventListener('submit', function (e) {
   e.preventDefault();
-  const btn = this.querySelector('button[type="submit"]');
+  const btn      = this.querySelector('button[type="submit"]');
   const original = btn.textContent;
-  btn.textContent  = 'Message Sent ✓';
-  btn.style.background = '#1a1a1a';
-  btn.style.color      = '#fff';
-  btn.style.border     = '1px solid rgba(255,255,255,0.2)';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = original;
-    btn.style = '';
-    btn.disabled = false;
-    this.reset();
-  }, 3500);
+
+  btn.textContent = 'Sending…';
+  btn.disabled    = true;
+
+  fetch('https://formspree.io/f/xgobarpg', {
+    method:  'POST',
+    body:    new FormData(this),
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(res => {
+    if (res.ok) {
+      btn.textContent      = 'Message Sent ✓';
+      btn.style.background = '#1a1a1a';
+      btn.style.color      = '#fff';
+      btn.style.border     = '1px solid rgba(255,255,255,0.2)';
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.style       = '';
+        btn.disabled    = false;
+        this.reset();
+      }, 3500);
+    } else {
+      btn.textContent = 'Something went wrong — try again';
+      btn.disabled    = false;
+      setTimeout(() => { btn.textContent = original; }, 3000);
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Something went wrong — try again';
+    btn.disabled    = false;
+    setTimeout(() => { btn.textContent = original; }, 3000);
+  });
 });
 
 
