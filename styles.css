@@ -183,80 +183,42 @@ img { display: block; max-width: 100%; }
   filter: blur(3px);
 }
 
-/* Bottom-left — beam points up-right toward logo center */
+/* Bottom-left — sweeps up-right toward logo */
 .spotlight-bl {
   background: conic-gradient(
-    at 6% 100%,
-    transparent 18deg,
-    rgba(255,255,255,0.13) 30deg,
-    rgba(255,255,255,0.18) 40deg,
-    rgba(255,255,255,0.13) 50deg,
-    transparent 62deg
+    at 5% 100%,
+    transparent 15deg,
+    rgba(255,255,255,0.10) 28deg,
+    rgba(255,255,255,0.22) 40deg,
+    rgba(255,255,255,0.10) 52deg,
+    transparent 65deg
   );
-  transform-origin: 6% 100%;
+  transform-origin: 5% 100%;
   animation: sweepBL 3.2s ease-in-out infinite alternate;
 }
 
-/* Bottom-right — beam points up-left toward logo center */
+/* Bottom-right — sweeps up-left toward logo */
 .spotlight-br {
   background: conic-gradient(
-    at 94% 100%,
-    transparent 298deg,
-    rgba(255,255,255,0.11) 310deg,
-    rgba(255,255,255,0.16) 320deg,
-    rgba(255,255,255,0.11) 330deg,
-    transparent 342deg
+    at 95% 100%,
+    transparent 295deg,
+    rgba(255,255,255,0.10) 308deg,
+    rgba(255,255,255,0.22) 320deg,
+    rgba(255,255,255,0.10) 332deg,
+    transparent 345deg
   );
-  transform-origin: 94% 100%;
+  transform-origin: 95% 100%;
   animation: sweepBR 3.8s ease-in-out infinite alternate;
-  animation-delay: -1.4s;
-}
-
-/* Left side — beam points right toward logo */
-.spotlight-l {
-  background: conic-gradient(
-    at 0% 58%,
-    transparent 68deg,
-    rgba(255,255,255,0.09) 76deg,
-    rgba(255,255,255,0.13) 83deg,
-    rgba(255,255,255,0.09) 90deg,
-    transparent 98deg
-  );
-  transform-origin: 0% 58%;
-  animation: sweepL 2.9s ease-in-out infinite alternate;
-  animation-delay: -0.7s;
-}
-
-/* Right side — beam points left toward logo */
-.spotlight-r {
-  background: conic-gradient(
-    at 100% 52%,
-    transparent 262deg,
-    rgba(255,255,255,0.09) 270deg,
-    rgba(255,255,255,0.13) 277deg,
-    rgba(255,255,255,0.09) 284deg,
-    transparent 292deg
-  );
-  transform-origin: 100% 52%;
-  animation: sweepR 3.5s ease-in-out infinite alternate;
-  animation-delay: -2.1s;
+  animation-delay: -1.6s;
 }
 
 @keyframes sweepBL {
-  from { transform: rotate(-20deg); opacity: 0.55; }
-  to   { transform: rotate(20deg);  opacity: 1;    }
+  from { transform: rotate(-22deg); opacity: 0.5; }
+  to   { transform: rotate(22deg);  opacity: 1;   }
 }
 @keyframes sweepBR {
-  from { transform: rotate(20deg);  opacity: 0.5;  }
-  to   { transform: rotate(-20deg); opacity: 1;    }
-}
-@keyframes sweepL {
-  from { transform: rotate(-14deg); opacity: 0.45; }
-  to   { transform: rotate(14deg);  opacity: 0.95; }
-}
-@keyframes sweepR {
-  from { transform: rotate(14deg);  opacity: 0.45; }
-  to   { transform: rotate(-14deg); opacity: 0.95; }
+  from { transform: rotate(22deg);  opacity: 0.5; }
+  to   { transform: rotate(-22deg); opacity: 1;   }
 }
 
 .hero-content {
