@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Sample Construction Co.</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.png" alt="Red Steel Construction" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Projects</p>
+    <h1>Our Projects</h1>
+    <p>Over 400 completed projects — here are some we're most proud of.</p>
+  </div>
+
+  <!-- Filter Bar -->
+  <section style="background:var(--light-bg);padding:1.5rem 2rem;border-bottom:1px solid var(--border);">
+    <div class="container" style="display:flex;gap:.75rem;flex-wrap:wrap;">
+      <button class="btn btn-primary" style="padding:.5rem 1.2rem;font-size:.85rem;" onclick="filterProjects('all', this)">All</button>
+      <button class="btn" style="padding:.5rem 1.2rem;font-size:.85rem;background:#fff;border:1px solid var(--border);color:var(--text);" onclick="filterProjects('commercial', this)">Commercial</button>
+      <button class="btn" style="padding:.5rem 1.2rem;font-size:.85rem;background:#fff;border:1px solid var(--border);color:var(--text);" onclick="filterProjects('residential', this)">Residential</button>
+      <button class="btn" style="padding:.5rem 1.2rem;font-size:.85rem;background:#fff;border:1px solid var(--border);color:var(--text);" onclick="filterProjects('civil', this)">Civil</button>
+      <button class="btn" style="padding:.5rem 1.2rem;font-size:.85rem;background:#fff;border:1px solid var(--border);color:var(--text);" onclick="filterProjects('renovation', this)">Renovation</button>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="projects-grid" id="projects-grid">
+
+        <div class="project-card" data-category="commercial">
+          <div class="project-thumb" style="background-image:url('office.jpg');background-size:cover;background-position:center;"></div>
+          <div class="project-info">
+            <h3>Riverside Office Complex</h3>
+            <p>55,000 sq ft, four-building commercial campus with underground parking and a shared amenity courtyard.</p>
+            <span class="tag">Commercial</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="residential">
+          <div class="project-thumb" style="background-image:url('residence.webp');background-size:cover;background-position:center;"></div>
+          <div class="project-info">
+            <h3>Maplewood Residences</h3>
+            <p>48-unit luxury townhome development with energy-efficient design, EV charging, and green common spaces.</p>
+            <span class="tag">Residential</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="civil">
+          <div class="project-thumb" style="background-image:url('bridge.webp');background-size:cover;background-position:center;"></div>
+          <div class="project-info">
+            <h3>Creekside Bridge Renovation</h3>
+            <p>Full structural restoration and lane widening of a historic county bridge serving 12,000 vehicles daily.</p>
+            <span class="tag">Civil</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="commercial">
+          <div class="project-thumb" style="background:linear-gradient(135deg,#2a1c5e,#5a3a9e);">🏥</div>
+          <div class="project-info">
+            <h3>Northside Medical Center</h3>
+            <p>82,000 sq ft outpatient medical facility built to LEED Silver standards with specialized MEP systems.</p>
+            <span class="tag">Commercial</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="renovation">
+          <div class="project-thumb" style="background:linear-gradient(135deg,#5e1c3a,#9e3a62);">🏛️</div>
+          <div class="project-info">
+            <h3>Downtown Historic Lofts</h3>
+            <p>Adaptive reuse of a 1920s warehouse into 32 luxury residential lofts while preserving all historic facades.</p>
+            <span class="tag">Renovation</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="civil">
+          <div class="project-thumb" style="background:linear-gradient(135deg,#1c5e4a,#2a9e7a);">🛣️</div>
+          <div class="project-info">
+            <h3>Route 9 Corridor Improvements</h3>
+            <p>4.2-mile road widening, new turn lanes, updated drainage, and pedestrian infrastructure for the county.</p>
+            <span class="tag">Civil</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="commercial">
+          <div class="project-thumb" style="background:linear-gradient(135deg,#3a3a1c,#7a7a2a);">🏬</div>
+          <div class="project-info">
+            <h3>Eastgate Retail Center</h3>
+            <p>120,000 sq ft open-air shopping center with 18 tenant spaces, food court, and 600-space surface lot.</p>
+            <span class="tag">Commercial</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="residential">
+          <div class="project-thumb" style="background:linear-gradient(135deg,#1c4a5e,#2a7a9e);">🏠</div>
+          <div class="project-info">
+            <h3>Oakwood Custom Homes</h3>
+            <p>Six high-end custom single-family residences ranging from 3,800 to 6,200 sq ft in a gated community.</p>
+            <span class="tag">Residential</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="renovation">
+          <div class="project-thumb" style="background:linear-gradient(135deg,#4a1c1c,#9e3a3a);">🏫</div>
+          <div class="project-info">
+            <h3>Lincoln Elementary Renovation</h3>
+            <p>Full modernization of a 1960s elementary school — new roof, HVAC, electrical, ADA upgrades, and interior refresh.</p>
+            <span class="tag">Renovation</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready to Add Your Project to This List?</h2>
+      <p>Contact us today for a free consultation and estimate.</p>
+      <a href="contact.html" class="btn btn-primary">Start a Project</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html"><img src="logo.png" alt="Red Steel Construction" style="height:220px;" /></a>
+        <p>Building excellence across the region since 1998. Licensed, insured, and committed to quality craftsmanship on every project.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="projects.html">Our Work</a></li>
+          <li><a href="contact.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Commercial</a></li>
+          <li><a href="services.html">Residential</a></li>
+          <li><a href="services.html">Renovations</a></li>
+          <li><a href="services.html">Civil Works</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15551234567">(555) 123-4567</a></li>
+          <li><a href="mailto:info@sampleconstructionco.com">info@sampleconstructionco.com</a></li>
+          <li><a href="#">123 Builder Ave, Suite 100</a></li>
+          <li><a href="#">Anytown, ST 00000</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sample Construction Co. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </footer>
+
+  <script>
+    function filterProjects(category, btn) {
+      document.querySelectorAll('#projects-grid .project-card').forEach(card => {
+        const show = category === 'all' || card.dataset.category === category;
+        card.style.display = show ? '' : 'none';
+      });
+      document.querySelectorAll('.btn[onclick]').forEach(b => {
+        b.style.background = '';
+        b.style.color = 'var(--text)';
+        b.style.borderColor = 'var(--border)';
+      });
+      btn.style.background = 'var(--accent)';
+      btn.style.color = '#fff';
+      btn.style.borderColor = 'var(--accent)';
+    }
+  </script>
+
+</body>
+</html>

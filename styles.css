@@ -599,9 +599,27 @@ img { display: block; max-width: 100%; }
   background: rgba(0,0,0,0.3);
   backdrop-filter: blur(4px);
 }
+.work-img-link {
+  display: block;
+}
 .work-info {
   padding: 22px 22px 24px;
   background: var(--bg-2);
+}
+.work-preview-btn {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  border: 1px solid var(--border-hi);
+  padding: 7px 16px;
+  border-radius: 100px;
+  transition: background var(--transition), border-color var(--transition);
+}
+.work-preview-btn:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.35);
 }
 .work-info h4 {
   font-family: 'Space Grotesk', sans-serif;

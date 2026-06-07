@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Sample Construction Co.</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.png" alt="Red Steel Construction" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <p class="breadcrumb"><a href="index.html">Home</a> › Contact</p>
+    <h1>Get in Touch</h1>
+    <p>We'd love to hear about your project. Reach out and we'll respond within one business day.</p>
+  </div>
+
+  <!-- Contact Layout -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h2>Let's Talk About Your Project</h2>
+          <p>Whether you have a fully developed plan or just an idea on a napkin, we're happy to sit down and explore what's possible. Fill out the form or reach us directly using the details below.</p>
+
+          <div class="contact-detail">
+            <div class="icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <p><a href="tel:+15551234567">(555) 123-4567</a></p>
+              <p style="font-size:.8rem;color:#999;">Mon – Fri, 7:00 AM – 5:00 PM</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:info@sampleconstructionco.com">info@sampleconstructionco.com</a></p>
+              <p style="font-size:.8rem;color:#999;">We respond within one business day</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="icon">📍</div>
+            <div>
+              <h4>Office</h4>
+              <p>123 Builder Ave, Suite 100</p>
+              <p>Anytown, ST 00000</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="icon">🕐</div>
+            <div>
+              <h4>Office Hours</h4>
+              <p>Monday – Friday: 7:00 AM – 5:00 PM</p>
+              <p>Saturday: 8:00 AM – 12:00 PM</p>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+
+          <!-- Map Placeholder -->
+          <div style="margin-top:2rem;background:linear-gradient(135deg,#2c2c2c,#444);border-radius:10px;height:180px;display:flex;align-items:center;justify-content:center;color:#888;font-size:.9rem;gap:.5rem;">
+            📍 Map placeholder
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <h3 style="font-size:1.3rem;margin-bottom:1.5rem;color:var(--dark);">Request a Free Quote</h3>
+
+          <form id="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First Name *</label>
+                <input type="text" id="first-name" name="first-name" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name *</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Smith" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="company">Company / Organization</label>
+              <input type="text" id="company" name="company" placeholder="Acme Corp (optional)" />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Needed *</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service…</option>
+                <option value="commercial">Commercial Construction</option>
+                <option value="residential">Residential Build</option>
+                <option value="renovation">Renovation / Remodel</option>
+                <option value="civil">Civil &amp; Infrastructure</option>
+                <option value="design-build">Design-Build</option>
+                <option value="other">Other / Not Sure</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="budget">Estimated Budget</label>
+                <select id="budget" name="budget">
+                  <option value="" disabled selected>Select a range…</option>
+                  <option>Under $100,000</option>
+                  <option>$100,000 – $500,000</option>
+                  <option>$500,000 – $1,000,000</option>
+                  <option>$1M – $5M</option>
+                  <option>$5M+</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="timeline">Desired Start Date</label>
+                <select id="timeline" name="timeline">
+                  <option value="" disabled selected>Select a timeframe…</option>
+                  <option>ASAP</option>
+                  <option>Within 3 months</option>
+                  <option>3 – 6 months</option>
+                  <option>6 – 12 months</option>
+                  <option>More than a year out</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Project Description *</label>
+              <textarea id="message" name="message" placeholder="Tell us about your project — location, scope, any specific requirements…" required></textarea>
+            </div>
+
+            <div class="form-group" style="flex-direction:row;align-items:center;gap:.6rem;margin-bottom:1.5rem;">
+              <input type="checkbox" id="consent" name="consent" required style="width:16px;height:16px;cursor:pointer;" />
+              <label for="consent" style="font-size:.83rem;color:var(--text-muted);font-weight:400;cursor:pointer;">
+                I agree to be contacted by Sample Construction Co. regarding my inquiry.
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;padding:.9rem;">
+              Send Message
+            </button>
+          </form>
+
+          <!-- Success Message (hidden by default) -->
+          <div id="success-msg" style="display:none;text-align:center;padding:2rem 1rem;">
+            <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+            <h3 style="color:var(--dark);margin-bottom:.5rem;">Message Sent!</h3>
+            <p style="color:var(--text-muted);font-size:.92rem;">Thank you for reaching out. A member of our team will be in touch within one business day.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html"><img src="logo.png" alt="Red Steel Construction" style="height:220px;" /></a>
+        <p>Building excellence across the region since 1998. Licensed, insured, and committed to quality craftsmanship on every project.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="projects.html">Our Work</a></li>
+          <li><a href="contact.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Commercial</a></li>
+          <li><a href="services.html">Residential</a></li>
+          <li><a href="services.html">Renovations</a></li>
+          <li><a href="services.html">Civil Works</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15551234567">(555) 123-4567</a></li>
+          <li><a href="mailto:info@sampleconstructionco.com">info@sampleconstructionco.com</a></li>
+          <li><a href="#">123 Builder Ave, Suite 100</a></li>
+          <li><a href="#">Anytown, ST 00000</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sample Construction Co. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

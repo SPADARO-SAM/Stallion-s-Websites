@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Red Steel Construction</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Filter Bar ── */
+    .filter-bar {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .filter-btn {
+      padding: .5rem 1.3rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--dark2);
+      color: var(--text-muted);
+      font-size: .85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition), border-color var(--transition);
+    }
+
+    .filter-btn:hover {
+      border-color: rgba(220,38,38,.4);
+      color: var(--white);
+    }
+
+    .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--white);
+    }
+
+    /* ── Filterable grid ── */
+    .project-item {
+      transition: opacity .35s ease, transform .35s ease;
+    }
+
+    .project-item.hidden {
+      display: none;
+    }
+
+    .project-item.fading {
+      opacity: 0;
+      transform: scale(.96);
+    }
+
+    /* ── Project Detail Badge ── */
+    .project-meta {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-top: .5rem;
+    }
+
+    .badge {
+      font-size: .72rem;
+      font-weight: 600;
+      padding: .2rem .65rem;
+      border-radius: 100px;
+      background: var(--dark3);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.png" alt="Red Steel Construction" class="logo-img" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Projects</div>
+      <h1>Our Work</h1>
+      <p>A portfolio of completed projects spanning commercial, residential, and civil construction across the region.</p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Filter Bar -->
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+        <button class="filter-btn" data-filter="residential">Residential</button>
+        <button class="filter-btn" data-filter="civil">Civil</button>
+        <button class="filter-btn" data-filter="renovation">Renovation</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="projects-grid" id="projects-grid">
+
+        <div class="project-item" data-category="commercial">
+          <div class="project-card">
+            <div class="project-thumb">
+              <img src="office.jpg" alt="Riverside Office Complex" />
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-info">
+              <h3>Riverside Office Complex</h3>
+              <p>55,000 sq ft commercial office campus with four connected buildings and underground parking for 300 vehicles.</p>
+              <span class="tag">Commercial</span>
+              <div class="project-meta">
+                <span class="badge">2024</span>
+                <span class="badge">$14.2M</span>
+                <span class="badge">18 months</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item" data-category="residential">
+          <div class="project-card">
+            <div class="project-thumb">
+              <img src="residence.webp" alt="Maplewood Residences" />
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-info">
+              <h3>Maplewood Residences</h3>
+              <p>48-unit luxury townhome development featuring energy-efficient design, EV charging, and community green spaces.</p>
+              <span class="tag">Residential</span>
+              <div class="project-meta">
+                <span class="badge">2023</span>
+                <span class="badge">$9.8M</span>
+                <span class="badge">22 months</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item" data-category="civil">
+          <div class="project-card">
+            <div class="project-thumb">
+              <img src="bridge.webp" alt="Creekside Bridge Renovation" />
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-info">
+              <h3>Creekside Bridge Renovation</h3>
+              <p>Full structural restoration and widening of a historic county bridge serving over 12,000 vehicles daily.</p>
+              <span class="tag">Civil</span>
+              <div class="project-meta">
+                <span class="badge">2022</span>
+                <span class="badge">$6.1M</span>
+                <span class="badge">14 months</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item" data-category="commercial">
+          <div class="project-card">
+            <div class="project-thumb">
+              <div class="project-thumb-placeholder">🏭</div>
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-info">
+              <h3>Northgate Distribution Center</h3>
+              <p>120,000 sq ft industrial warehouse and distribution facility with climate-controlled storage and dock levelers.</p>
+              <span class="tag">Commercial</span>
+              <div class="project-meta">
+                <span class="badge">2023</span>
+                <span class="badge">$11.5M</span>
+                <span class="badge">16 months</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item" data-category="renovation">
+          <div class="project-card">
+            <div class="project-thumb">
+              <div class="project-thumb-placeholder">🏛️</div>
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-info">
+              <h3>City Hall Restoration</h3>
+              <p>Historic preservation and full interior renovation of the 1930s municipal building, including seismic upgrades.</p>
+              <span class="tag">Renovation</span>
+              <div class="project-meta">
+                <span class="badge">2021</span>
+                <span class="badge">$4.7M</span>
+                <span class="badge">20 months</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item" data-category="residential">
+          <div class="project-card">
+            <div class="project-thumb">
+              <div class="project-thumb-placeholder">🏠</div>
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-info">
+              <h3>Lakefront Custom Estate</h3>
+              <p>8,400 sq ft custom waterfront home featuring passive solar design, geothermal heating, and a private boathouse.</p>
+              <span class="tag">Residential</span>
+              <div class="project-meta">
+                <span class="badge">2022</span>
+                <span class="badge">$3.2M</span>
+                <span class="badge">12 months</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item" data-category="civil">
+          <div class="project-card">
+            <div class="project-thumb">
+              <div class="project-thumb-placeholder">🛣️</div>
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-info">
+              <h3>Westside Connector Road</h3>
+              <p>3.2-mile arterial road expansion including curb, gutter, stormwater infrastructure, and two new signalized intersections.</p>
+              <span class="tag">Civil</span>
+              <div class="project-meta">
+                <span class="badge">2024</span>
+                <span class="badge">$8.3M</span>
+                <span class="badge">11 months</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item" data-category="renovation">
+          <div class="project-card">
+            <div class="project-thumb">
+              <div class="project-thumb-placeholder">🏪</div>
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-info">
+              <h3>Harbor Square Retail Refresh</h3>
+              <p>Complete tenant improvement and facade renovation of a 32,000 sq ft retail strip, breathing new life into a dated center.</p>
+              <span class="tag">Renovation</span>
+              <div class="project-meta">
+                <span class="badge">2023</span>
+                <span class="badge">$2.9M</span>
+                <span class="badge">8 months</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item" data-category="commercial">
+          <div class="project-card">
+            <div class="project-thumb">
+              <div class="project-thumb-placeholder">🏥</div>
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-info">
+              <h3>Valley Medical Clinic</h3>
+              <p>18,000 sq ft outpatient medical facility built to FGI healthcare guidelines, with specialized MEP systems and clean rooms.</p>
+              <span class="tag">Commercial</span>
+              <div class="project-meta">
+                <span class="badge">2025</span>
+                <span class="badge">$7.4M</span>
+                <span class="badge">14 months</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container reveal">
+      <h2>Have a Project in Mind?</h2>
+      <p>We'd love to hear about it. Reach out for a free, no-obligation consultation.</p>
+      <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html">
+          <span class="logo-icon">⬛</span>
+          <span><span class="logo-accent">Sample</span> Construction Co.</span>
+        </a>
+        <p>Built strong. Built right. Red Steel Construction has been delivering excellence across the region since 1998.</p>
+        <div class="footer-social">
+          <a class="social-btn" href="#" aria-label="Facebook">f</a>
+          <a class="social-btn" href="#" aria-label="LinkedIn">in</a>
+          <a class="social-btn" href="#" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="projects.html">Our Work</a></li>
+          <li><a href="contact.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Commercial</a></li>
+          <li><a href="services.html">Residential</a></li>
+          <li><a href="services.html">Renovations</a></li>
+          <li><a href="services.html">Civil Works</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15551234567">(555) 123-4567</a></li>
+          <li><a href="mailto:info@sampleconstructionco.com">info@sampleconstructionco.com</a></li>
+          <li><a href="#">123 Builder Ave, Suite 100</a></li>
+          <li><a href="#">Anytown, ST 00000</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Red Steel Construction. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top">&#8679;</button>
+  <script src="script.js"></script>
+  <script>
+    /* ── Project Filter ── */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        projectItems.forEach(item => {
+          const match = filter === 'all' || item.dataset.category === filter;
+          if (match) {
+            item.classList.remove('hidden');
+            requestAnimationFrame(() => item.classList.remove('fading'));
+          } else {
+            item.classList.add('fading');
+            setTimeout(() => item.classList.add('hidden'), 350);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

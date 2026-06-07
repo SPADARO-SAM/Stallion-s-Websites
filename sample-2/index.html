@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Red Steel Construction — Built Strong. Built Right.</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div id="progress-bar"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.png" alt="Red Steel Construction" class="logo-img" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="slides">
+      <div class="slide active" style="background-image:url('sample1.jpg');"></div>
+      <div class="slide"        style="background-image:url('sample2.jpg');"></div>
+      <div class="slide"        style="background-image:url('sample3.jpg');"></div>
+    </div>
+    <div class="slide-overlay"></div>
+
+    <div class="container hero-content">
+      <div class="hero-eyebrow">⬛ Licensed &amp; Insured Since 1998</div>
+      <h1>We Build <span class="highlight">Stronger</span><br>Communities</h1>
+      <p>From ground-up commercial builds to large-scale renovations, Red Steel Construction delivers quality craftsmanship on time and on budget.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
+        <a href="projects.html" class="btn btn-outline">View Our Work</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>25+</strong><span>Years in Business</span></div>
+        <div class="stat"><strong>400+</strong><span>Projects Completed</span></div>
+        <div class="stat"><strong>98%</strong><span>Client Satisfaction</span></div>
+        <div class="stat"><strong>50+</strong><span>Team Members</span></div>
+      </div>
+    </div>
+
+    <div class="slide-dots">
+      <button class="dot active" onclick="goToSlide(0)"></button>
+      <button class="dot"        onclick="goToSlide(1)"></button>
+      <button class="dot"        onclick="goToSlide(2)"></button>
+    </div>
+    <button class="slide-arrow slide-prev" onclick="changeSlide(-1)">&#8592;</button>
+    <button class="slide-arrow slide-next" onclick="changeSlide(1)">&#8594;</button>
+    <div class="scroll-hint">Scroll</div>
+  </section>
+
+  <!-- Stats Band -->
+  <div class="stats-band">
+    <div class="container">
+      <div class="stat-item">
+        <strong data-target="25" data-suffix="+">0+</strong>
+        <span>Years in Business</span>
+      </div>
+      <div class="stat-item">
+        <strong data-target="400" data-suffix="+">0+</strong>
+        <span>Projects Completed</span>
+      </div>
+      <div class="stat-item">
+        <strong data-target="98" data-suffix="%">0%</strong>
+        <span>Client Satisfaction</span>
+      </div>
+      <div class="stat-item">
+        <strong data-target="50" data-suffix="+">0+</strong>
+        <span>Team Members</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section class="section alt-bg">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>What We Build</h2>
+        <div class="accent-bar"></div>
+        <p>Full-service construction for residential, commercial, and civil projects across the region.</p>
+      </div>
+      <div class="services-grid stagger-children">
+        <div class="service-card">
+          <div class="service-icon">🏢</div>
+          <h3>Commercial Construction</h3>
+          <p>Office buildings, retail spaces, and industrial facilities built to the highest standards of safety and design.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <h3>Residential Builds</h3>
+          <p>Custom homes and multi-unit developments crafted with care — from foundation to finishing touches.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Renovations &amp; Remodels</h3>
+          <p>Breathe new life into existing structures with our expert renovation and remodeling teams.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛣️</div>
+          <h3>Civil &amp; Infrastructure</h3>
+          <p>Roads, bridges, utilities, and site development for municipalities and private developers alike.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏗️</div>
+          <h3>Project Management</h3>
+          <p>End-to-end project oversight, scheduling, and subcontractor coordination to keep every job on track.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📐</div>
+          <h3>Design-Build</h3>
+          <p>One team, one contract — seamless integration of design and construction for faster delivery.</p>
+        </div>
+      </div>
+      <div class="reveal" style="text-align:center;margin-top:3rem;">
+        <a href="services.html" class="btn btn-primary">All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Why Choose Us</h2>
+        <div class="accent-bar"></div>
+        <p>We've been earning trust one project at a time for over two decades.</p>
+      </div>
+      <div class="why-grid stagger-children">
+        <div class="why-item">
+          <span class="icon">🏆</span>
+          <h3>Award-Winning Quality</h3>
+          <p>Recognized by the Regional Builders Association for excellence in construction quality three years running.</p>
+        </div>
+        <div class="why-item">
+          <span class="icon">📅</span>
+          <h3>On-Time Delivery</h3>
+          <p>Our project management systems ensure deadlines are met without cutting corners on craftsmanship.</p>
+        </div>
+        <div class="why-item">
+          <span class="icon">💰</span>
+          <h3>Transparent Pricing</h3>
+          <p>Detailed estimates with no hidden fees. You'll always know where your investment is going.</p>
+        </div>
+        <div class="why-item">
+          <span class="icon">🛡️</span>
+          <h3>Fully Licensed &amp; Insured</h3>
+          <p>Full general liability and workers' comp coverage on every job for total peace of mind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="section alt-bg">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Featured Projects</h2>
+        <div class="accent-bar"></div>
+        <p>A snapshot of our recent work across the region.</p>
+      </div>
+      <div class="projects-grid stagger-children">
+        <div class="project-card">
+          <div class="project-thumb">
+            <img src="office.jpg" alt="Riverside Office Complex" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-info">
+            <h3>Riverside Office Complex</h3>
+            <p>55,000 sq ft commercial office campus with four connected buildings and underground parking.</p>
+            <span class="tag">Commercial</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb">
+            <img src="residence.webp" alt="Maplewood Residences" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-info">
+            <h3>Maplewood Residences</h3>
+            <p>48-unit luxury townhome development featuring energy-efficient design and community green spaces.</p>
+            <span class="tag">Residential</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-thumb">
+            <img src="bridge.webp" alt="Creekside Bridge Renovation" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-info">
+            <h3>Creekside Bridge Renovation</h3>
+            <p>Full structural restoration and widening of a historic county bridge serving 12,000 vehicles daily.</p>
+            <span class="tag">Civil</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="text-align:center;margin-top:3rem;">
+        <a href="projects.html" class="btn btn-primary">See All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>What Our Clients Say</h2>
+        <div class="accent-bar"></div>
+        <p>Real words from real clients who trusted us to deliver.</p>
+      </div>
+      <div class="testimonials-track reveal">
+        <div class="testimonials-inner">
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"Sample Construction delivered our office complex two weeks ahead of schedule and under budget. Their communication throughout the project was exceptional — we always knew exactly where things stood."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar">👤</div>
+                <div class="author-info">
+                  <strong>Michael Torres</strong>
+                  <span>CEO, Bridgepoint Capital</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"The quality of craftsmanship on our townhome development was outstanding. Every detail was handled with care, and the team was incredibly responsive throughout the entire build."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar">👤</div>
+                <div class="author-info">
+                  <strong>Sarah Kimura</strong>
+                  <span>Director, Maplewood Properties</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"I've worked with a lot of contractors over the years. Sample Construction stands out for their transparency, their work ethic, and the pride they clearly take in every single project they touch."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar">👤</div>
+                <div class="author-info">
+                  <strong>James Weller</strong>
+                  <span>City Infrastructure Director</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="testi-controls">
+          <button class="testi-btn" onclick="changeTesti(-1)">&#8592;</button>
+          <div class="testi-dots">
+            <button class="testi-dot active" onclick="goToTesti(0)"></button>
+            <button class="testi-dot"        onclick="goToTesti(1)"></button>
+            <button class="testi-dot"        onclick="goToTesti(2)"></button>
+          </div>
+          <button class="testi-btn" onclick="changeTesti(1)">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container reveal">
+      <h2>Ready to Start Your Project?</h2>
+      <p>Contact us today for a free consultation and no-obligation estimate.</p>
+      <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html">
+          <img src="logo.png" alt="Red Steel Construction" class="logo-img" />
+        </a>
+        <p>Built strong. Built right. Red Steel Construction has been delivering excellence across the region since 1998.</p>
+        <div class="footer-social">
+          <a class="social-btn" href="#" aria-label="Facebook">f</a>
+          <a class="social-btn" href="#" aria-label="LinkedIn">in</a>
+          <a class="social-btn" href="#" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="projects.html">Our Work</a></li>
+          <li><a href="contact.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Commercial</a></li>
+          <li><a href="services.html">Residential</a></li>
+          <li><a href="services.html">Renovations</a></li>
+          <li><a href="services.html">Civil Works</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15551234567">(555) 123-4567</a></li>
+          <li><a href="mailto:info@sampleconstructionco.com">info@sampleconstructionco.com</a></li>
+          <li><a href="#">123 Builder Ave, Suite 100</a></li>
+          <li><a href="#">Anytown, ST 00000</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Red Steel Construction. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top">&#8679;</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
