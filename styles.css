@@ -187,11 +187,11 @@ img { display: block; max-width: 100%; }
 .spotlight-tl {
   background: conic-gradient(
     at 5% 0%,
-    transparent 30deg,
-    rgba(255,255,255,0.10) 40deg,
-    rgba(255,255,255,0.22) 48deg,
-    rgba(255,255,255,0.10) 56deg,
-    transparent 66deg
+    transparent 118deg,
+    rgba(255,255,255,0.10) 128deg,
+    rgba(255,255,255,0.26) 138deg,
+    rgba(255,255,255,0.10) 148deg,
+    transparent 158deg
   );
   transform-origin: 5% 0%;
   animation: sweepTL 3.2s ease-in-out infinite alternate;
@@ -201,11 +201,11 @@ img { display: block; max-width: 100%; }
 .spotlight-tr {
   background: conic-gradient(
     at 95% 0%,
-    transparent 294deg,
-    rgba(255,255,255,0.10) 304deg,
-    rgba(255,255,255,0.22) 312deg,
-    rgba(255,255,255,0.10) 320deg,
-    transparent 330deg
+    transparent 202deg,
+    rgba(255,255,255,0.10) 212deg,
+    rgba(255,255,255,0.26) 222deg,
+    rgba(255,255,255,0.10) 232deg,
+    transparent 242deg
   );
   transform-origin: 95% 0%;
   animation: sweepTR 3.8s ease-in-out infinite alternate;
