@@ -174,65 +174,89 @@ img { display: block; max-width: 100%; }
 }
 
 /* ============================================
-   MORPHING BACKGROUND BLOBS
+   SPOTLIGHTS
    ============================================ */
-.blob {
+.spotlight {
   position: absolute;
+  inset: 0;
   pointer-events: none;
-  filter: blur(50px);
-  will-change: border-radius, transform;
-  animation:
-    blobMorph   var(--morph, 14s) ease-in-out infinite,
-    blobFloat   var(--float, 20s) ease-in-out infinite alternate;
-}
-.blob-1 {
-  width: 600px; height: 600px;
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 40%, transparent 70%);
-  top: -100px; left: -100px;
-  --morph: 2.5s; --float: 5s;
-  animation-delay: 0s, 0s;
-}
-.blob-2 {
-  width: 500px; height: 500px;
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.04) 40%, transparent 70%);
-  top: 20%; right: -80px;
-  --morph: 3s; --float: 4s;
-  animation-delay: -1s, -2s;
-}
-.blob-3 {
-  width: 420px; height: 420px;
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.03) 40%, transparent 70%);
-  bottom: -60px; left: 30%;
-  --morph: 2.8s; --float: 5.5s;
-  animation-delay: -0.5s, -1.5s;
-}
-.blob-4 {
-  width: 380px; height: 380px;
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.05) 40%, transparent 70%);
-  top: 50%; left: 15%;
-  --morph: 2.2s; --float: 4.5s;
-  animation-delay: -1.2s, -3s;
-}
-.blob-5 {
-  width: 340px; height: 340px;
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.04) 40%, transparent 70%);
-  top: 10%; left: 50%;
-  --morph: 3.2s; --float: 3.8s;
-  animation-delay: -0.8s, -2.5s;
+  filter: blur(3px);
 }
 
-@keyframes blobMorph {
-  0%,100% { border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; }
-  20%     { border-radius: 38% 62% 42% 58% / 58% 33% 67% 42%; }
-  40%     { border-radius: 53% 47% 68% 32% / 38% 58% 42% 62%; }
-  60%     { border-radius: 33% 67% 48% 52% / 58% 38% 62% 42%; }
-  80%     { border-radius: 52% 48% 33% 67% / 43% 67% 33% 57%; }
+/* Bottom-left — beam points up-right toward logo center */
+.spotlight-bl {
+  background: conic-gradient(
+    at 6% 100%,
+    transparent 18deg,
+    rgba(255,255,255,0.13) 30deg,
+    rgba(255,255,255,0.18) 40deg,
+    rgba(255,255,255,0.13) 50deg,
+    transparent 62deg
+  );
+  transform-origin: 6% 100%;
+  animation: sweepBL 3.2s ease-in-out infinite alternate;
 }
-@keyframes blobFloat {
-  0%   { transform: translate(0px,   0px)   scale(1);    }
-  33%  { transform: translate(40px, -50px)  scale(1.06); }
-  66%  { transform: translate(-30px, 40px)  scale(0.94); }
-  100% { transform: translate(28px, -18px)  scale(1.03); }
+
+/* Bottom-right — beam points up-left toward logo center */
+.spotlight-br {
+  background: conic-gradient(
+    at 94% 100%,
+    transparent 298deg,
+    rgba(255,255,255,0.11) 310deg,
+    rgba(255,255,255,0.16) 320deg,
+    rgba(255,255,255,0.11) 330deg,
+    transparent 342deg
+  );
+  transform-origin: 94% 100%;
+  animation: sweepBR 3.8s ease-in-out infinite alternate;
+  animation-delay: -1.4s;
+}
+
+/* Left side — beam points right toward logo */
+.spotlight-l {
+  background: conic-gradient(
+    at 0% 58%,
+    transparent 68deg,
+    rgba(255,255,255,0.09) 76deg,
+    rgba(255,255,255,0.13) 83deg,
+    rgba(255,255,255,0.09) 90deg,
+    transparent 98deg
+  );
+  transform-origin: 0% 58%;
+  animation: sweepL 2.9s ease-in-out infinite alternate;
+  animation-delay: -0.7s;
+}
+
+/* Right side — beam points left toward logo */
+.spotlight-r {
+  background: conic-gradient(
+    at 100% 52%,
+    transparent 262deg,
+    rgba(255,255,255,0.09) 270deg,
+    rgba(255,255,255,0.13) 277deg,
+    rgba(255,255,255,0.09) 284deg,
+    transparent 292deg
+  );
+  transform-origin: 100% 52%;
+  animation: sweepR 3.5s ease-in-out infinite alternate;
+  animation-delay: -2.1s;
+}
+
+@keyframes sweepBL {
+  from { transform: rotate(-20deg); opacity: 0.55; }
+  to   { transform: rotate(20deg);  opacity: 1;    }
+}
+@keyframes sweepBR {
+  from { transform: rotate(20deg);  opacity: 0.5;  }
+  to   { transform: rotate(-20deg); opacity: 1;    }
+}
+@keyframes sweepL {
+  from { transform: rotate(-14deg); opacity: 0.45; }
+  to   { transform: rotate(14deg);  opacity: 0.95; }
+}
+@keyframes sweepR {
+  from { transform: rotate(14deg);  opacity: 0.45; }
+  to   { transform: rotate(-14deg); opacity: 0.95; }
 }
 
 .hero-content {
