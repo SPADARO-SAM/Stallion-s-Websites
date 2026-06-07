@@ -83,7 +83,7 @@ img { display: block; max-width: 100%; }
   align-items: center;
 }
 .nav-logo-img {
-  height: 70px;
+  height: 100px;
   width: auto;
   display: block;
 }
@@ -176,13 +176,6 @@ img { display: block; max-width: 100%; }
   text-align: center;
   max-width: 760px;
   z-index: 2;
-}
-.hero-logo {
-  height: 200px;
-  width: auto;
-  margin: 0 auto 36px;
-  display: block;
-  border-radius: 16px;
 }
 .hero-badge {
   display: inline-block;
