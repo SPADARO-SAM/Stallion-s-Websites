@@ -183,40 +183,40 @@ img { display: block; max-width: 100%; }
   filter: blur(3px);
 }
 
-/* Bottom-left — sweeps up-right toward logo */
-.spotlight-bl {
+/* Top-left — shines down-right toward logo */
+.spotlight-tl {
   background: conic-gradient(
-    at 5% 100%,
-    transparent 15deg,
-    rgba(255,255,255,0.10) 28deg,
-    rgba(255,255,255,0.22) 40deg,
-    rgba(255,255,255,0.10) 52deg,
-    transparent 65deg
+    at 5% 0%,
+    transparent 30deg,
+    rgba(255,255,255,0.10) 40deg,
+    rgba(255,255,255,0.22) 48deg,
+    rgba(255,255,255,0.10) 56deg,
+    transparent 66deg
   );
-  transform-origin: 5% 100%;
-  animation: sweepBL 3.2s ease-in-out infinite alternate;
+  transform-origin: 5% 0%;
+  animation: sweepTL 3.2s ease-in-out infinite alternate;
 }
 
-/* Bottom-right — sweeps up-left toward logo */
-.spotlight-br {
+/* Top-right — shines down-left toward logo */
+.spotlight-tr {
   background: conic-gradient(
-    at 95% 100%,
-    transparent 295deg,
-    rgba(255,255,255,0.10) 308deg,
-    rgba(255,255,255,0.22) 320deg,
-    rgba(255,255,255,0.10) 332deg,
-    transparent 345deg
+    at 95% 0%,
+    transparent 294deg,
+    rgba(255,255,255,0.10) 304deg,
+    rgba(255,255,255,0.22) 312deg,
+    rgba(255,255,255,0.10) 320deg,
+    transparent 330deg
   );
-  transform-origin: 95% 100%;
-  animation: sweepBR 3.8s ease-in-out infinite alternate;
+  transform-origin: 95% 0%;
+  animation: sweepTR 3.8s ease-in-out infinite alternate;
   animation-delay: -1.6s;
 }
 
-@keyframes sweepBL {
+@keyframes sweepTL {
   from { transform: rotate(-22deg); opacity: 0.5; }
   to   { transform: rotate(22deg);  opacity: 1;   }
 }
-@keyframes sweepBR {
+@keyframes sweepTR {
   from { transform: rotate(22deg);  opacity: 0.5; }
   to   { transform: rotate(-22deg); opacity: 1;   }
 }
