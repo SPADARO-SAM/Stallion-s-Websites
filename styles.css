@@ -578,6 +578,23 @@ img { display: block; max-width: 100%; }
 .pricing-featured .check { color: #000; }
 .cross { color: var(--text-dim); }
 .pricing-featured .cross { color: #ccc; }
+.pricing-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 22px 0;
+}
+.pricing-featured .pricing-divider { background: rgba(0,0,0,0.1); }
+
+.pricing-section-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+.pricing-featured .pricing-section-label { color: #888; }
+
 .pricing-note {
   text-align: center;
   font-size: 0.8rem;
