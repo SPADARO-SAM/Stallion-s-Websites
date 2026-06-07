@@ -75,7 +75,7 @@ img { display: block; max-width: 100%; }
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 .nav-logo {
@@ -91,6 +91,7 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   gap: 36px;
+  margin-top: 28px;
 }
 .nav-links a {
   font-size: 0.875rem;
@@ -138,7 +139,7 @@ img { display: block; max-width: 100%; }
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 120px 24px 80px;
+  padding: 440px 24px 80px;
 }
 .hero-bg {
   position: absolute;
