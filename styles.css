@@ -189,22 +189,22 @@ img { display: block; max-width: 100%; }
   width: 600px; height: 600px;
   background: radial-gradient(ellipse at center, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 40%, transparent 70%);
   top: -100px; left: -100px;
-  --morph: 13s; --float: 22s;
+  --morph: 4s; --float: 7s;
   animation-delay: 0s, 0s;
 }
 .blob-2 {
   width: 500px; height: 500px;
   background: radial-gradient(ellipse at center, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.04) 40%, transparent 70%);
   top: 20%; right: -80px;
-  --morph: 17s; --float: 17s;
-  animation-delay: -6s, -10s;
+  --morph: 5s; --float: 6s;
+  animation-delay: -2s, -3s;
 }
 .blob-3 {
   width: 420px; height: 420px;
   background: radial-gradient(ellipse at center, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.03) 40%, transparent 70%);
   bottom: -60px; left: 30%;
-  --morph: 15s; --float: 25s;
-  animation-delay: -3s, -7s;
+  --morph: 4.5s; --float: 8s;
+  animation-delay: -1s, -4s;
 }
 
 @keyframes blobMorph {
