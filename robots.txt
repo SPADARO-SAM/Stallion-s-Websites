@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://stallionssites.com/sitemap.xml
