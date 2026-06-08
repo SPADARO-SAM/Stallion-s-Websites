@@ -236,6 +236,8 @@ img { display: block; max-width: 100%; }
   border-radius: 16px;
   /* clip the white border artifact from the screenshot */
   clip-path: inset(6px 8px round 14px);
+  /* reserve space before image loads — prevents layout shift (CLS) */
+  aspect-ratio: 5 / 2;
 }
 .hero-badge {
   display: inline-block;
