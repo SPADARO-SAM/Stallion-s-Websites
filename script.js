@@ -17,6 +17,8 @@ const cursorDot  = document.createElement('div');
 const cursorRing = document.createElement('div');
 cursorDot.className  = 'cursor-dot';
 cursorRing.className = 'cursor-ring';
+cursorDot.setAttribute('aria-hidden', 'true');
+cursorRing.setAttribute('aria-hidden', 'true');
 document.body.appendChild(cursorDot);
 document.body.appendChild(cursorRing);
 
