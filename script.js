@@ -11,59 +11,61 @@ window.addEventListener('load', () => {
 
 
 /* ============================================
-   CUSTOM CURSOR
+   CUSTOM CURSOR (skip entirely on touch devices)
    ============================================ */
-const cursorDot  = document.createElement('div');
-const cursorRing = document.createElement('div');
-cursorDot.className  = 'cursor-dot';
-cursorRing.className = 'cursor-ring';
-cursorDot.setAttribute('aria-hidden', 'true');
-cursorRing.setAttribute('aria-hidden', 'true');
-document.body.appendChild(cursorDot);
-document.body.appendChild(cursorRing);
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  const cursorDot  = document.createElement('div');
+  const cursorRing = document.createElement('div');
+  cursorDot.className  = 'cursor-dot';
+  cursorRing.className = 'cursor-ring';
+  cursorDot.setAttribute('aria-hidden', 'true');
+  cursorRing.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(cursorDot);
+  document.body.appendChild(cursorRing);
 
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
-let ringX  = mouseX;
-let ringY  = mouseY;
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let ringX  = mouseX;
+  let ringY  = mouseY;
 
-// Dot tracks cursor exactly
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursorDot.style.left = mouseX + 'px';
-  cursorDot.style.top  = mouseY + 'px';
-});
+  // Dot tracks cursor exactly
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursorDot.style.left = mouseX + 'px';
+    cursorDot.style.top  = mouseY + 'px';
+  });
 
-// Ring follows with smooth lag
-(function animateRing() {
-  ringX += (mouseX - ringX) * 0.11;
-  ringY += (mouseY - ringY) * 0.11;
-  cursorRing.style.left = ringX + 'px';
-  cursorRing.style.top  = ringY + 'px';
-  requestAnimationFrame(animateRing);
-})();
+  // Ring follows with smooth lag
+  (function animateRing() {
+    ringX += (mouseX - ringX) * 0.11;
+    ringY += (mouseY - ringY) * 0.11;
+    cursorRing.style.left = ringX + 'px';
+    cursorRing.style.top  = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  })();
 
-// Hover expand on interactive elements
-const hoverTargets = 'a, button, .pricing-card, .service-card, .work-card, input, select, textarea';
-document.querySelectorAll(hoverTargets).forEach(el => {
-  el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-  el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-});
+  // Hover expand on interactive elements
+  const hoverTargets = 'a, button, .pricing-card, .service-card, .work-card, input, select, textarea';
+  document.querySelectorAll(hoverTargets).forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
 
-// Click shrink pulse
-document.addEventListener('mousedown', () => document.body.classList.add('cursor-clicked'));
-document.addEventListener('mouseup',   () => document.body.classList.remove('cursor-clicked'));
+  // Click shrink pulse
+  document.addEventListener('mousedown', () => document.body.classList.add('cursor-clicked'));
+  document.addEventListener('mouseup',   () => document.body.classList.remove('cursor-clicked'));
 
-// Hide when cursor leaves window
-document.addEventListener('mouseleave', () => {
-  cursorDot.style.opacity  = '0';
-  cursorRing.style.opacity = '0';
-});
-document.addEventListener('mouseenter', () => {
-  cursorDot.style.opacity  = '1';
-  cursorRing.style.opacity = '1';
-});
+  // Hide when cursor leaves window
+  document.addEventListener('mouseleave', () => {
+    cursorDot.style.opacity  = '0';
+    cursorRing.style.opacity = '0';
+  });
+  document.addEventListener('mouseenter', () => {
+    cursorDot.style.opacity  = '1';
+    cursorRing.style.opacity = '1';
+  });
+}
 
 
 /* ============================================

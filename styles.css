@@ -911,9 +911,11 @@ img { display: block; max-width: 100%; }
 }
 
 /* ============================================
-   CUSTOM CURSOR
+   CUSTOM CURSOR (mouse devices only)
    ============================================ */
-*, *::before, *::after { cursor: none !important; }
+@media (hover: hover) and (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
+}
 
 .cursor-dot {
   position: fixed;
@@ -952,6 +954,9 @@ body.cursor-clicked .cursor-dot {
 }
 body.cursor-clicked .cursor-ring {
   width: 28px; height: 28px;
+}
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none; }
 }
 
 /* ============================================
